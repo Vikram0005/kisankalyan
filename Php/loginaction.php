@@ -39,7 +39,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 if($row['USERTYPE']==1)
                 {
                     //SUPER ADMIN
-            	    header("Location: home.php");
+            	    header("Location: ../Php/Admin/Dashboard.php");
                 }
                 else if($row['USERTYPE']==2)
                 {
