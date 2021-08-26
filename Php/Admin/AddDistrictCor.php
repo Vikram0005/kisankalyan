@@ -1,6 +1,10 @@
+<?php
+session_start();
+include "../db_conn.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include "Head.php"; ?>
+<?php include "../Head.php"; ?>
 
 <body id="page-top">
     <div id="wrapper">
@@ -14,7 +18,7 @@
                 <section id="contact" class="contact">
                     <div class="container">
                         <div class="alert alert-primary" role="alert">
-                            <b>District Coordinator Registration<b>
+                            <b>Coordinator Registration<b>
                         </div>
                     </div>
 
@@ -29,30 +33,30 @@
                                 <?php echo $_GET['success']; ?>
                             </div>
                         <?php } ?>
-                        <form action="Action/AddDistrictAction.php" method="post" role="form" class="php-email-form form1">
+                        <form action="Action/AddDistrictAction.php" method="post" enctype='multipart/form-data' role="form" class="php-email-form form1">
                             <div class="form-row">
                                 <div class="col-md-4 form-group">
-                                    <input type="text" name="fname" class="form-control" id="name" placeholder="First Name" data-rule="minlen:4" data-msg="Please enter a valid name" />
+                                    <input required type="text" name="fname" class="form-control" id="name" placeholder="First Name" data-rule="minlen:4" data-msg="Please enter a valid name" />
                                     <div class="validate"></div>
                                 </div>
 
                                 <div class="col-md-4 form-group">
-                                    <input type="text" name="lname" class="form-control" id="name" placeholder="Last Name" data-rule="minlen:4" data-msg="Please enter a valid surname" />
+                                    <input required type="text" name="lname" class="form-control" id="name" placeholder="Last Name" data-rule="minlen:4" data-msg="Please enter a valid surname" />
                                     <div class="validate"></div>
                                 </div>
 
                                 <div class="col-md-4 form-group">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                                    <input required type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                                     <div class="validate"></div>
                                 </div>
 
                                 <div class="col-md-4 form-group">
-                                    <input type="text" class="form-control" name="number" id="contact" placeholder="Contact Number" data-rule="email" data-msg="Please enter a valid contact number" />
+                                    <input required type="text" class="form-control" name="number" id="contact" placeholder="Contact Number" data-rule="email" data-msg="Please enter a valid contact number" />
                                     <div class="validate"></div>
                                 </div>
 
                                 <div class="col-md-4 form-group">
-                                    <input type="text" class="form-control" name="password" id="password" placeholder="Password" data-rule="email" data-msg="Please enter a valid password" />
+                                    <input required type="text" class="form-control" name="password" id="password" placeholder="Password" data-rule="email" data-msg="Please enter a valid password" />
                                     <div class="validate"></div>
                                 </div>
 
@@ -63,7 +67,7 @@
                                 </div>
 
                                 <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control" name="address1" id="address1" placeholder="Address Line1" data-rule="email" data-msg="Please enter a valid address" multiline />
+                                    <input required type="text" class="form-control" name="address1" id="address1" placeholder="Address Line1" data-rule="email" data-msg="Please enter a valid address" multiline />
                                     <div class="validate"></div>
                                 </div>
 
@@ -78,73 +82,75 @@
                                 </div>
 
                                 <div class="col-md-4 form-group">
-                                    <input type="text" class="form-control" name="pin" id="address" placeholder="Pin Code" data-rule="email" data-msg="Please enter a valid address" />
+                                    <input required type="text" class="form-control" name="pincode" id="address" placeholder="Pin Code" data-rule="email" data-msg="Please enter a valid address" />
                                     <div class="validate"></div>
                                 </div>
 
                                 <div class="col-md-4 form-group">
-                                    <select class="form-control" name="position">
-                                        <option value="2">Select Position</option>
-                                        <option value="3">DISTRICT COORDINATOR</option>
-                                        <option value="4">BLOCK COORDINATOR</option>
-                                        <option>OPERATOR</option>
+                                    <select class="form-control" name="position" id="position" required>
+                                        <option value="-1">Select Position</option>
+                                        <option value="2">DISTRICT COORDINATOR</option>
+                                        <option value="3">BLOCK COORDINATOR</option>
+                                        <option value="4">OPERATOR</option>
                                     </select>
                                     <div class="validate"></div>
                                 </div>
 
                                 <div class="col-md-4 form-group">
-                                    <input type="text" class="form-control" name="state" id="text" placeholder="Working State" data-rule="email" data-msg="Please enter a valid address" />
+                                    <input required type="text" class="form-control" name="state" id="text" placeholder="Working State" data-rule="email" data-msg="Please enter a valid address" />
                                     <div class="validate"></div>
                                 </div>
 
                                 <div class="col-md-4 form-group">
-                                    <input type="text" class="form-control" name="district" id="text" placeholder="Working District" data-rule="email" data-msg="Please enter a valid address" />
+                                    <input required type="text" class="form-control" name="district" id="text" placeholder="Working District" data-rule="email" data-msg="Please enter a valid address" />
                                     <div class="validate"></div>
                                 </div>
 
                                 <div class="col-md-4 form-group">
-                                    <input type="text" class="form-control" name="block" id="text" placeholder="Working Block" data-rule="email" data-msg="Please enter a valid address" />
+                                    <input required type="text" class="form-control" name="block" id="wb" placeholder="Working Block" data-rule="email" data-msg="Please enter a valid address" />
                                     <div class="validate"></div>
                                 </div>
 
 
                                 <div class="col-md-4 form-group">
-                                    <input type="text" class="form-control" name="gp" id="text" placeholder="Working Gp" data-rule="email" data-msg="Please enter a valid address" />
+                                    <input required type="text" class="form-control" name="gp" id="gp" placeholder="Working Gp" data-rule="email" data-msg="Please enter a valid address" />
                                     <div class="validate"></div>
                                 </div>
 
                                 <div class="col-md-4 form-group">
-                                    <select class="form-control" name="document">
-                                        <option>Select Document</option>
-                                        <option value="Voter Id">VOTER ID</option>
-                                        <option value="Pan Card">PAN CARD</option>
-                                        <option value="Aadhar Card">AADHAR CARD</option>
+                                    <select class="form-control" name="document" required>
+                                        <option value="None">Select Document</option>
+                                        <option value="VoterId">VOTER ID</option>
+                                        <option value="PanCard">PAN CARD</option>
+                                        <option value="AadharCard">AADHAR CARD</option>
                                         <option value="Passport">PASSPORT</option>
-                                        <option value="Driving Licence">DRIVING LICENCE</option>
-                                        <option value="Gaoborha Certificate">GAOBORHA CERTIFICATE</option>
+                                        <option value="DrivingLicence">DRIVING LICENCE</option>
+                                        <option value="GaoborhaCertificate">GAOBORHA CERTIFICATE</option>
                                     </select>
                                     <div class="validate"></div>
                                 </div>
 
                                 <div class="col-md-4 form-group">
-                                    <input type="text" class="form-control" name="dnumber" id="text" placeholder="Document Number" data-rule="email" data-msg="Please enter a valid address" />
+                                    <input required type="text" class="form-control" name="dnumber" id="text" placeholder="Document Number" data-rule="email" data-msg="Please enter a valid address" />
                                     <div class="validate"></div>
                                 </div>
 
                                 <div class="col-md-6 form-group">
-                                    <input type="file" id="myfile" class="form-control" name="doc" placeholder="Browse Document" data-msg="Please enter a valid Document" />
+                                    <input required type="file" id="myfile" class="form-control" name="doc" placeholder="Browse Document" data-msg="Please enter a valid Document" />
                                     <div class="validate"></div>
                                 </div>
 
+                                <div class="col-md-4 form-group">
+                                    <input required type="text" class="form-control" name="pin" id="text" placeholder="Pin Number" data-rule="email" data-msg="Please enter a valid address" />
+                                    <div class="validate"></div>
+                                </div>
+                                
                                 <div class="col-md-12 form-group">
                                     <button type="Submit" class="btn btn-success">Add District Coordinator</button>
                                 </div>
 
                             </div>
-
-
                         </form>
-
                     </div>
                 </section>
             </div>
@@ -156,3 +162,30 @@
 </body>
 
 </html>
+<script>
+
+$(document).ready(function()
+{
+  $("#position").change(function()
+  {
+    var value = $("#position option:selected").val();
+   // $("#wb").show();
+   // $("#gp").show();
+    $("#wb").removeAttr("disabled");
+    $("#gp").removeAttr("disabled");
+    if(value==2)
+    {
+       // $("#wb").hide();
+       // $("#gp").hide();
+        $("#wb").prop("disabled", "true");
+        $("#gp").prop("disabled", "true");
+    }
+    else  if(value==3)
+    {
+       // $("#wb").hide();
+      //  $("#gp").hide();
+        $("#gp").prop("disabled", "true");
+    }
+   });
+});
+</script>

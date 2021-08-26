@@ -14,43 +14,45 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>District Coordinator</span>
+                    <span>Manage Coordinator</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Manage Coordinator</h6>
                         <a class="collapse-item" href="AddDistrictCor.php">Add</a>
-                        <a class="collapse-item" href="cards.html">View</a>
+                        <a class="collapse-item" href="ViewDistrictCor.php">View District</a>
+                        <a class="collapse-item" href="ViewBlockCor.php">View Block</a>
+                        <a class="collapse-item" href="ViewOperatorCor.php">View Operator</a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo2"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Block Coordinator</span>
+                    <span>Manage Kishan</span>
                 </a>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Manage Coordinator</h6>
-                        <a class="collapse-item" href="buttons.html">Add</a>
-                        <a class="collapse-item" href="cards.html">View</a>
+                        <h6 class="collapse-header">Manage Kishan</h6>
+                        <a class="collapse-item" href="AddFarmerCor.php">Add</a>
+                        <a class="collapse-item" href="ViewFarmerCor.php">View</a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo1"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Operator</span>
+                    <span>Pin Genrate</span>
                 </a>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseTwo1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Manage Operator</h6>
-                        <a class="collapse-item" href="buttons.html">Add</a>
-                        <a class="collapse-item" href="cards.html">View</a>
+                        <h6 class="collapse-header">Manage Pin</h6>
+                        <a class="collapse-item" href="Action/AddPin.php">Genrate Pin</a>
+                        <a class="collapse-item" href="ViewPin.php">View Pin</a>
                     </div>
                 </div>
             </li>
@@ -71,7 +73,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="../logout.php">Logout</a>
                 </div>
             </div>
         </div>
